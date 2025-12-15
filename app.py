@@ -168,8 +168,8 @@ async def main_loop():
                 legend=dict(x=0, y=1, orientation='h')
             )
             
-            # 차트 갱신
-            chart_placeholder.plotly_chart(fig, use_container_width=True)
+            # key를 추가하여 중복 ID 에러 방지
+            chart_placeholder.plotly_chart(fig, use_container_width=True, key="live_chart")
             
             # 현재 상태 표시
             last_price = df.iloc[-1]['close']
