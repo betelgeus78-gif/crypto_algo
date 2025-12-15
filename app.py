@@ -29,10 +29,10 @@ st.title(f"🚀 {SYMBOL} Real-Time Range Bar & CVD")
 with st.sidebar:
     st.header("설정 패널")
     range_input = st.number_input("Range Size (Ticks)", min_value=1, value=RANGE_SIZE_TICKS)
-    if st.button("차트 초기화"):
-    st.session_state.bars = deque(maxlen=100)
+   if st.button("차트 초기화"):
+    st.session_state.bars = deque(maxlen=100)  # <-- 스페이스 4칸 들여쓰기
     st.session_state.current_bar = None
-    st.rerun()  # 최신 함수로 변경
+    st.rerun()
 
 # ---------------------------------------------------------
 # 3. 데이터 상태 관리 (Session State)
